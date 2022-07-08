@@ -40,7 +40,9 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: '1.18'
+      - name: install fyne
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
       - name: package exe
         run: fyne package -os windows -icon golang_logo_icon.png
       - name: rename msi
-        run: tree
+        run: tree /F
